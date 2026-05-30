@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE FLI IELTS Training | Premium Test Prep</title>
+    <meta name="description" content="Prepare for IELTS, PTE, TOEFL, and Duolingo with expert mentorship at THE FLI IELTS Training, a premium division of The Polyglot Academy.">
+    <meta name="keywords" content="IELTS, PTE, TOEFL, Duolingo English Test, THE FLI, Polyglot Academy, EdTech">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F5C400',
+                        accent: '#F5C400',
+                        premium: {
+                            black: '#111111',
+                            dark: '#1F2937'
+                        },
+                        muted: '#6B7280',
+                        light: '#F8FAFC',
+                        border: '#E5E7EB'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+                    },
+                    keyframes: {
+                        scroll: {
+                            to: {
+                                transform: "translate(calc(-50% - 0.5rem))",
+                            },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+    @layer base {
+        body {
+            @apply font-sans bg-white text-premium-dark antialiased selection:bg-primary selection:text-premium-black;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            @apply font-heading tracking-tight;
+        }
+    }
+    
+    @layer components {
+        .btn-primary {
+            @apply bg-primary text-premium-black px-8 py-3.5 rounded-full font-semibold transition-all duration-300 hover:opacity-90 inline-flex items-center justify-center gap-2;
+        }
+        .btn-outline {
+            @apply border-2 border-white/20 text-white px-8 py-3.5 rounded-full font-semibold transition-all duration-300 hover:bg-white hover:text-premium-black inline-flex items-center justify-center gap-2;
+        }
+        .section-padding {
+            @apply py-16 lg:py-24 px-6 md:px-12 lg:px-24;
+        }
+        .premium-card {
+            @apply bg-white p-10 rounded-3xl border border-border shadow-[0_2px_40px_-12px_rgba(0,0,0,0.05)] hover:border-primary/30 hover:shadow-[0_8px_40px_-12px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-2;
+        }
+    }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <div id="root"></div>
+    
+    <script type="text/babel" src="components/Navbar.js"></script>
+    <script type="text/babel" src="components/Hero.js"></script>
+    <script type="text/babel" src="components/Features.js"></script>
+    <script type="text/babel" src="components/Courses.js"></script>
+    <script type="text/babel" src="components/Results.js"></script>
+    <script type="text/babel" src="components/CTA.js"></script>
+    <script type="text/babel" src="components/Contact.js"></script>
+    <script type="text/babel" src="components/Footer.js"></script>
+    <script type="text/babel" src="app.js"></script>
+    <script>
+        // Initialize Lucide icons after React renders
+        function initLucideIcons() {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        }
+        
+        // Try multiple times to ensure icons are initialized after React renders
+        setTimeout(initLucideIcons, 100);
+        setTimeout(initLucideIcons, 500);
+        setTimeout(initLucideIcons, 1000);
+        
+        // Also initialize on window load
+        window.addEventListener('load', initLucideIcons);
+    </script>
+</body>
+</html>
