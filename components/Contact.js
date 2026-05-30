@@ -1,7 +1,7 @@
 function Contact() {
     try {
         return (
-            <section id="contact" className="py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 md:px-12 lg:px-24 bg-light min-h-screen flex items-center" data-name="Contact" data-file="components/Contact.js">
+            <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-12 lg:px-24 bg-light min-h-[70vh] flex items-center" data-name="Contact" data-file="components/Contact.js">
                 <div className="max-w-7xl mx-auto w-full bg-white rounded-[1.5rem] sm:rounded-[2rem] lg:rounded-[2.5rem] shadow-[0_8px_40px_-12px_rgba(0,0,0,0.05)] border border-border/50 overflow-hidden">
                     <div className="grid lg:grid-cols-5 items-stretch">
                         
@@ -9,7 +9,7 @@ function Contact() {
                         <div className="lg:col-span-2 bg-premium-black p-6 sm:p-8 md:p-12 lg:p-16 text-white relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-primary/10 rounded-full blur-2xl sm:blur-3xl"></div>
                             
-                            <h3 className="text-2xl sm:text-3xl font-heading font-bold mb-3 sm:mb-4 relative z-10">
+                            <h3 className="text-2xl sm:text-3xl font-heading font-semibold mb-3 sm:mb-4 relative z-10">
                                 Connect With Us
                             </h3>
                             <p className="text-white/60 font-light mb-6 sm:mb-8 md:mb-12 relative z-10 text-sm sm:text-base">
@@ -50,7 +50,7 @@ function Contact() {
                         {/* Contact Form */}
                         <div className="lg:col-span-3 p-6 sm:p-8 md:p-12 lg:p-16 bg-white">
                             <div className="mb-6 sm:mb-8 md:mb-10">
-                                <h3 className="text-2xl sm:text-3xl font-heading font-bold text-premium-black mb-2 sm:mb-3">Request a Callback</h3>
+                                <h3 className="text-2xl sm:text-3xl font-heading font-semibold text-premium-black mb-2 sm:mb-3">Request a Callback</h3>
                                 <p className="text-muted text-sm sm:text-base">Fill out the form below and our admissions team will contact you within 24 hours.</p>
                             </div>
                             <form className="space-y-4 sm:space-y-5" onSubmit={(e) => e.preventDefault()}>

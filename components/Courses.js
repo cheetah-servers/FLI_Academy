@@ -4,7 +4,7 @@ function cn(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-const HoverEffect = ({ items, className }) => {
+const HoverEffect = ({ items, className, onCourseClick }) => {
   const [hoveredIndex, setHoveredIndex] = React.useState(null);
   return (
     <div className={cn('grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 py-6 sm:py-8 gap-2 sm:gap-3', className)}>
@@ -14,6 +14,7 @@ const HoverEffect = ({ items, className }) => {
           className="relative group block p-2 h-full w-full cursor-pointer"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
+          onClick={() => onCourseClick(item)}
         >
           <AnimatePresence>
             {hoveredIndex === idx && (
@@ -37,7 +38,7 @@ const HoverEffect = ({ items, className }) => {
               </div>
               <div
                 className={cn(
-                  'text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full transition-colors duration-500',
+                  'text-[10px] font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full transition-colors duration-500',
                   hoveredIndex === idx
                     ? 'bg-premium-black/10 text-premium-black border border-premium-black/20'
                     : 'bg-white/5 border border-white/10 text-white/60'
@@ -73,7 +74,7 @@ const HoverEffect = ({ items, className }) => {
             <a
               href="#contact"
               className={cn(
-                'mt-8 inline-flex items-center gap-2 text-sm font-bold transition-colors duration-500',
+                'mt-8 inline-flex items-center gap-2 text-sm font-semibold transition-colors duration-500',
                 hoveredIndex === idx ? 'text-premium-black' : 'text-primary group-hover:text-primary/80'
               )}
             >
@@ -104,7 +105,7 @@ const CardTitle = ({ className, children, hovered }) => {
   return (
     <h4
       className={cn(
-        'font-bold font-heading text-2xl tracking-wide transition-colors duration-500',
+        'font-semibold font-heading text-2xl tracking-wide transition-colors duration-500',
         hovered ? 'text-premium-black' : 'text-white',
         className
       )}
@@ -129,6 +130,25 @@ const CardDescription = ({ className, children, hovered }) => {
 };
 
 function Courses() {
+  const [selectedCourse, setSelectedCourse] = React.useState(null);
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+  const handleCourseClick = (course) => {
+    setSelectedCourse(course);
+    setIsModalOpen(true);
+    // Re-initialize Lucide icons after modal opens
+    setTimeout(() => {
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+    }, 100);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedCourse(null);
+  };
+
   const courses = [
     {
       title: 'IELTS Academic',
@@ -136,6 +156,18 @@ function Courses() {
       target: 'Study Abroad',
       icon: 'icon-book-open',
       features: ['8+ Strategies', 'Daily Essays'],
+      details: {
+        duration: '8-12 weeks',
+        sessions: '60 hours',
+        includes: [
+          'Personalized study plan based on your current level',
+          'Daily mock tests with detailed feedback',
+          '1-on-1 speaking sessions with certified trainers',
+          'Writing feedback from IELTS examiners',
+          'Access to Cambridge study materials',
+          'Unlimited practice tests with instant scoring'
+        ]
+      }
     },
     {
       title: 'IELTS General',
@@ -143,6 +175,18 @@ function Courses() {
       target: 'Immigration',
       icon: 'icon-globe',
       features: ['Letter Writing', 'Fluency Drills'],
+      details: {
+        duration: '6-10 weeks',
+        sessions: '50 hours',
+        includes: [
+          'Letter writing templates for various scenarios',
+          'Fluency building exercises with native speakers',
+          'Real-world context practice sessions',
+          'Immigration-focused vocabulary and content',
+          'Flexible scheduling for working professionals',
+          'Career guidance and visa consultation support'
+        ]
+      }
     },
     {
       title: 'PTE Academic',
@@ -150,6 +194,18 @@ function Courses() {
       target: 'Study / Migrate',
       icon: 'icon-monitor',
       features: ['AI Scoring', 'Template Mastery'],
+      details: {
+        duration: '4-8 weeks',
+        sessions: '40 hours',
+        includes: [
+          'AI scoring pattern analysis and strategy',
+          'Template-based approach for all sections',
+          'Computer-based practice in real test environment',
+          'Fast-track preparation for urgent deadlines',
+          'Score prediction tools and progress tracking',
+          'Mock tests with AI-powered feedback'
+        ]
+      }
     },
     {
       title: 'TOEFL Prep',
@@ -157,6 +213,18 @@ function Courses() {
       target: 'US / Canada',
       icon: 'icon-award',
       features: ['Integrated Writing', 'Campus Context'],
+      details: {
+        duration: '8-12 weeks',
+        sessions: '55 hours',
+        includes: [
+          'North American accent training and practice',
+          'Integrated task strategies for all sections',
+          'Campus vocabulary and academic language building',
+          'University-specific admission guidance',
+          'Speaking practice with native English speakers',
+          'Application and essay writing support'
+        ]
+      }
     },
   ];
 
@@ -164,7 +232,7 @@ function Courses() {
     return (
       <section
         id="courses"
-        className="py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 md:px-12 lg:px-24 relative overflow-hidden min-h-screen flex flex-col justify-center"
+        className="pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-4 sm:pb-6 md:pb-8 lg:pb-10 px-4 sm:px-6 md:px-12 lg:px-24 relative overflow-hidden min-h-[45vh] flex flex-col justify-center"
         style={{ backgroundColor: '#111111' }}
         data-name="Courses"
         data-file="components/Courses.js"
@@ -189,10 +257,10 @@ function Courses() {
         <div className="max-w-7xl mx-auto relative z-10 w-full mb-8 sm:mb-10 md:mb-12">
           <div className="text-center max-w-3xl mx-auto px-4">
             <div className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-primary/10 text-primary mb-4 sm:mb-6">
-              <i data-lucide="sparkles" className="text-sm"></i>
+              <i data-lucide="book-open" className="text-sm"></i>
               <span className="text-xs sm:text-sm font-semibold tracking-wide">Premium Curriculums</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-4 sm:mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-white mb-4 sm:mb-6 leading-tight">
               Choose Your Pathway
             </h2>
             <p className="text-base sm:text-lg text-white/60 font-light leading-relaxed">
@@ -202,8 +270,75 @@ function Courses() {
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto w-full">
-          <HoverEffect items={courses} />
+          <HoverEffect items={courses} onCourseClick={handleCourseClick} />
         </div>
+
+        {/* Course Detail Modal */}
+        {isModalOpen && selectedCourse && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+            <div className="absolute inset-0 bg-black/90 backdrop-blur-sm" onClick={closeModal}></div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              className="relative bg-premium-black rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-white/10 no-scrollbar"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              <style>{`.no-scrollbar::-webkit-scrollbar { display: none; }`}</style>
+              <div className="sticky top-0 bg-premium-black border-b border-white/10 p-6 sm:p-8 flex justify-between items-start">
+                <div>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center border-2 border-primary">
+                      <i data-lucide={selectedCourse.icon.replace('icon-', '')} className="text-xl text-primary"></i>
+                    </div>
+                    <span className="text-xs font-semibold text-primary uppercase tracking-widest">{selectedCourse.target}</span>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-heading font-semibold text-white">{selectedCourse.title}</h3>
+                </div>
+                <button onClick={closeModal} className="text-white/60 hover:text-white transition-colors">
+                  <i data-lucide="x" className="text-2xl"></i>
+                </button>
+              </div>
+
+              <div className="p-6 sm:p-8">
+                <p className="text-white/70 mb-6 leading-relaxed">{selectedCourse.desc}</p>
+
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="bg-white/5 border border-white/10 p-4 rounded-xl text-center">
+                    <div className="text-sm text-white/60 mb-1">Duration</div>
+                    <div className="text-lg font-semibold text-primary">{selectedCourse.details.duration}</div>
+                  </div>
+                  <div className="bg-white/5 border border-white/10 p-4 rounded-xl text-center">
+                    <div className="text-sm text-white/60 mb-1">Sessions</div>
+                    <div className="text-lg font-semibold text-primary">{selectedCourse.details.sessions}</div>
+                  </div>
+                </div>
+
+                <div className="mb-6">
+                  <h4 className="text-lg font-semibold text-white mb-3">What's Included:</h4>
+                  <ul className="space-y-2">
+                    {selectedCourse.details.includes.map((item, idx) => (
+                      <li key={idx} className="flex items-center gap-3 text-white/80">
+                        <i data-lucide="check-circle" className="text-primary text-lg shrink-0"></i>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="flex gap-3">
+                  <a href="#contact" onClick={closeModal} className="flex-1 btn-primary text-center py-3 sm:py-4">
+                    Contact Us
+                    <i data-lucide="arrow-right" className="ml-2"></i>
+                  </a>
+                  <button onClick={closeModal} className="flex-1 btn-outline text-center py-3 sm:py-4">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
       </section>
     );
   } catch (error) {

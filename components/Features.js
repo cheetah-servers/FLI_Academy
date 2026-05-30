@@ -3,32 +3,38 @@ function Features() {
         {
             icon: 'icon-award',
             title: 'Certified Mentors',
-            desc: 'Train under elite professionals with proven track records in global standardized tests.'
+            desc: 'Train under elite professionals with proven track records in global standardized tests.',
+            image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
         },
         {
             icon: 'icon-laptop',
             title: 'Daily Assessments',
-            desc: 'Experience real-exam conditions with our rigorous daily mock test infrastructure.'
+            desc: 'Experience real-exam conditions with our rigorous daily mock test infrastructure.',
+            image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
         },
         {
             icon: 'icon-mic',
             title: 'Speaking Labs',
-            desc: 'Exclusive 1-on-1 speaking sessions tailored to perfect your pronunciation and fluency.'
+            desc: 'Exclusive 1-on-1 speaking sessions tailored to perfect your pronunciation and fluency.',
+            image: 'https://images.unsplash.com/photo-1591115765373-5207764f72e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
         },
         {
             icon: 'icon-chart-line',
             title: 'Deep Analytics',
-            desc: 'Granular performance tracking to identify and eliminate your specific weak points.'
+            desc: 'Granular performance tracking to identify and eliminate your specific weak points.',
+            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
         },
         {
             icon: 'icon-clock',
             title: 'Adaptive Scheduling',
-            desc: 'Premium flexibility with batch timings designed around your professional commitments.'
+            desc: 'Premium flexibility with batch timings designed around your professional commitments.',
+            image: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
         },
         {
             icon: 'icon-layers',
             title: 'Hybrid Learning',
-            desc: 'Flawless transition between our luxury physical centers and premium digital platform.'
+            desc: 'Flawless transition between our luxury physical centers and premium digital platform.',
+            image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
         }
     ];
 
@@ -40,10 +46,10 @@ function Features() {
                         {/* Sticky Left Column */}
                         <div className="lg:col-span-5 lg:sticky lg:top-32 mb-12 lg:mb-0">
                             <div className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-primary/10 text-primary mb-4 sm:mb-6">
-                                <i data-lucide="sparkles" className="text-sm"></i>
+                                <i data-lucide="graduation-cap" className="text-sm"></i>
                                 <h2 className="text-xs sm:text-sm font-semibold tracking-wide">The FLI Advantage</h2>
                             </div>
-                            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-premium-black mb-4 sm:mb-6 leading-tight">
+                            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-premium-black mb-4 sm:mb-6 leading-tight">
                                 Designed for <br/> Excellence
                             </h3>
                             <p className="text-base sm:text-lg text-muted font-light mb-6 sm:mb-8 md:mb-10 leading-relaxed">
@@ -65,11 +71,21 @@ function Features() {
                                     key={idx} 
                                     className={`bg-white p-6 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] border border-gray-300 hover:border-primary/40 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_-10px_rgba(245,196,0,0.15)] transition-all duration-300 group ${idx % 2 !== 0 ? 'sm:mt-12' : ''}`}
                                 >
-                                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-light flex items-center justify-center mb-6 sm:mb-8 group-hover:scale-110 group-hover:bg-primary/10 transition-all duration-300 border border-border/50">
-                                        <i data-lucide={feature.icon.replace('icon-', '')} className="text-xl sm:text-2xl text-premium-dark group-hover:text-primary transition-colors duration-300"></i>
+                                    <div className="relative mb-6 sm:mb-8 rounded-2xl overflow-hidden aspect-[4/3]">
+                                        <img 
+                                            src={feature.image} 
+                                            alt={feature.title}
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-premium-black/50 to-transparent"></div>
+                                        <div className="absolute bottom-4 left-4">
+                                            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-lg">
+                                                <i data-lucide={feature.icon.replace('icon-', '')} className="text-lg sm:text-xl text-premium-dark"></i>
+                                            </div>
+                                        </div>
                                     </div>
                                     
-                                    <h4 className="text-lg sm:text-xl font-bold font-heading text-premium-black mb-2 sm:mb-3">
+                                    <h4 className="text-lg sm:text-xl font-semibold font-heading text-premium-black mb-2 sm:mb-3">
                                         {feature.title}
                                     </h4>
                                     

@@ -1,7 +1,7 @@
 function CTA() {
     try {
         return (
-            <section className="py-16 sm:py-20 md:py-24 lg:py-32 xl:py-40 relative overflow-hidden bg-premium-black min-h-screen flex items-center" data-name="CTA" data-file="components/CTA.js">
+            <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 relative overflow-hidden bg-premium-black min-h-[60vh] flex items-center" data-name="CTA" data-file="components/CTA.js">
                 {/* Global Map Background */}
                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-90"></div>
                 
@@ -13,7 +13,7 @@ function CTA() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[500px] md:h-[500px] lg:w-[800px] lg:h-[800px] bg-primary/10 rounded-full blur-[60px] sm:blur-[100px] pointer-events-none"></div>
 
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10 text-center w-full">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-white mb-6 sm:mb-8 leading-[1.1]">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-semibold text-white mb-6 sm:mb-8 leading-[1.1]">
                         Your Global Future <br/>
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-yellow-200">Begins Here.</span>
                     </h2>

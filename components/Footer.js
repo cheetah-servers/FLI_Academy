@@ -43,7 +43,7 @@ function Footer() {
 
                         {/* Quick Links */}
                         <div>
-                            <h4 className="text-white font-bold mb-4 sm:mb-6 font-heading tracking-wide text-sm sm:text-base">Quick Links</h4>
+                            <h4 className="text-white font-semibold mb-4 sm:mb-6 font-heading tracking-wide text-sm sm:text-base">Quick Links</h4>
                             <ul className="space-y-3 sm:space-y-4">
                                 <li><a href="#home" className="text-white/60 hover:text-primary transition-colors text-xs sm:text-sm">Home</a></li>
                                 <li><a href="#about" className="text-white/60 hover:text-primary transition-colors text-xs sm:text-sm">About Us</a></li>
@@ -54,7 +54,7 @@ function Footer() {
 
                         {/* Courses */}
                         <div>
-                            <h4 className="text-white font-bold mb-4 sm:mb-6 font-heading tracking-wide text-sm sm:text-base">Our Courses</h4>
+                            <h4 className="text-white font-semibold mb-4 sm:mb-6 font-heading tracking-wide text-sm sm:text-base">Our Courses</h4>
                             <ul className="space-y-3 sm:space-y-4">
                                 <li><a href="#" className="text-white/60 hover:text-primary transition-colors text-xs sm:text-sm">IELTS Academic</a></li>
                                 <li><a href="#" className="text-white/60 hover:text-primary transition-colors text-xs sm:text-sm">IELTS General</a></li>
@@ -65,11 +65,11 @@ function Footer() {
 
                         {/* Newsletter */}
                         <div>
-                            <h4 className="text-white font-bold mb-4 sm:mb-6 font-heading tracking-wide text-sm sm:text-base">Stay Updated</h4>
+                            <h4 className="text-white font-semibold mb-4 sm:mb-6 font-heading tracking-wide text-sm sm:text-base">Stay Updated</h4>
                             <p className="text-white/60 text-xs sm:text-sm mb-3 sm:mb-4">Subscribe to our newsletter for the latest tips and test updates.</p>
                             <div className="flex bg-white/5 rounded-xl border border-white/10 overflow-hidden focus-within:border-primary transition-colors">
                                 <input type="email" placeholder="Your email address" className="bg-transparent text-white px-3 sm:px-4 py-2.5 sm:py-3 w-full text-xs sm:text-sm focus:outline-none" />
-                                <button className="bg-primary text-premium-black px-3 sm:px-4 py-2.5 sm:py-3 font-bold text-xs sm:text-sm hover:bg-white transition-colors whitespace-nowrap">
+                                <button className="bg-primary text-premium-black px-3 sm:px-4 py-2.5 sm:py-3 font-semibold text-xs sm:text-sm hover:bg-white transition-colors whitespace-nowrap">
                                     Subscribe
                                 </button>
                             </div>
