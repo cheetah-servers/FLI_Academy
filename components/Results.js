@@ -79,28 +79,24 @@ const InfiniteMovingCards = ({
           >
             <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-colors duration-500"></div>
             
-            <div className="flex justify-between items-start mb-4 sm:mb-5 relative z-10">
-                <div className="flex items-center gap-2 sm:gap-3">
-                    <img 
-                        src={student.img} 
-                        alt={student.name}
-                        className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-full object-cover border-2 border-white group-hover:border-primary/50 transition-colors shadow-sm"
-                    />
-                    <div>
-                        <h4 className="font-semibold text-premium-black text-sm sm:text-base lg:text-lg">{student.name}</h4>
-                        <p className="text-[9px] sm:text-[10px] lg:text-xs text-muted uppercase tracking-wider">{student.dest}</p>
+            {/* Quote decoration */}
+            <div className="absolute top-2 right-4 text-primary/45 text-6xl font-serif select-none pointer-events-none">“</div>
+            
+            <div className="relative z-10 h-full flex flex-col justify-between">
+                <div>
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-premium-black text-primary text-xs sm:text-sm font-semibold mb-4">
+                        <span className="font-bold">{student.score}</span>
+                        <span className="text-[10px] sm:text-xs font-normal opacity-80">Score</span>
                     </div>
+                    <p className="text-xs sm:text-sm text-premium-black leading-relaxed font-normal mb-6 italic">
+                        "{student.quote}"
+                    </p>
+                </div>
+                
+                <div className="border-t border-border pt-3">
+                    <h4 className="font-semibold text-premium-black text-sm sm:text-base">{student.name}</h4>
                 </div>
             </div>
-
-            <div className="mb-3 sm:mb-4 relative z-10">
-                <div className="text-xl sm:text-2xl lg:text-3xl font-heading font-semibold text-primary mb-0.5">{student.score}</div>
-                <div className="text-[9px] sm:text-[10px] font-semibold text-muted uppercase tracking-widest">{student.test}</div>
-            </div>
-            
-            <p className="text-xs sm:text-sm text-premium-dark leading-relaxed font-light relative z-10">
-                "{student.quote}"
-            </p>
           </li>
         ))}
       </ul>
@@ -109,12 +105,7 @@ const InfiniteMovingCards = ({
 };
 
 function Results() {
-    const stats = [
-        { label: 'Success Rate', value: '98%', desc: 'First Attempt' },
-        { label: 'Global Alumni', value: '10k+', desc: 'In 50+ Countries' },
-        { label: 'Avg. Band', value: '7.5+', desc: 'Consistent Scores' },
-        { label: 'Top Admits', value: '500+', desc: 'Global Universities' }
-    ];
+
 
     const testimonials = [
         {
@@ -145,42 +136,24 @@ function Results() {
 
     try {
         return (
-            <section id="results" className="py-8 sm:py-10 md:py-14 lg:py-16 px-4 sm:px-6 md:px-12 lg:px-24 bg-white relative overflow-hidden min-h-[50vh] flex items-center" data-name="Results" data-file="components/Results.js">
+            <section id="results" className="py-6 sm:py-8 lg:py-10 px-4 sm:px-6 md:px-12 lg:px-24 bg-white relative overflow-hidden flex items-center" data-name="Results" data-file="components/Results.js">
                 {/* Background Accents */}
                 <div className="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 lg:w-[600px] lg:h-[600px] bg-primary/5 rounded-full blur-[80px] sm:blur-[120px] pointer-events-none"></div>
                 <div className="absolute bottom-0 left-0 w-32 h-32 sm:w-48 sm:h-48 lg:w-[400px] lg:h-[400px] bg-light rounded-full blur-[60px] sm:blur-[100px] pointer-events-none"></div>
 
                 <div className="max-w-7xl mx-auto relative z-10 w-full">
-                    <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center mb-8 sm:mb-10">
-                        {/* Header Content */}
-                        <div className="lg:col-span-5 mb-8 lg:mb-0">
-                            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-light border border-border text-primary mb-3 sm:mb-4">
-                                <i data-lucide="trophy" className="text-xs"></i>
-                                <h2 className="text-[10px] sm:text-xs font-semibold tracking-wide uppercase text-premium-dark">Proven Results</h2>
-                            </div>
-                            <h3 className="text-2xl sm:text-3xl lg:text-5xl font-heading font-semibold text-premium-black mb-3 sm:mb-4 leading-tight">
-                                Excellence <br/>
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-yellow-500">Delivered.</span>
-                            </h3>
-                            <p className="text-sm sm:text-base text-muted font-light leading-relaxed mb-4 sm:mb-6">
-                                Our data-driven approach consistently produces top-percentile scores, opening doors to global institutions.
-                            </p>
-                            <button className="btn-primary py-2 sm:py-2.5 px-4 sm:px-6 text-xs sm:text-sm">
-                                Join Our Alumni
-                                <i data-lucide="arrow-right"></i>
-                            </button>
-                        </div>
-
-                        {/* Stats Grid */}
-                        <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-2 gap-3 sm:gap-4">
-                            {stats.map((stat, idx) => (
-                                <div key={idx} className="bg-white border border-gray-300 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] p-4 sm:p-5 lg:p-6 rounded-xl sm:rounded-2xl hover:border-primary/30 hover:shadow-[0_8px_30px_-10px_rgba(245,196,0,0.15)] transition-all duration-300 group">
-                                    <div className="text-2xl sm:text-3xl lg:text-4xl font-heading font-semibold text-premium-black mb-1 group-hover:text-primary transition-colors">{stat.value}</div>
-                                    <div className="text-[10px] sm:text-xs font-semibold text-premium-dark uppercase tracking-wider mb-0.5">{stat.label}</div>
-                                    <div className="text-[10px] sm:text-[11px] text-muted">{stat.desc}</div>
-                                </div>
-                            ))}
-                        </div>
+                    {/* Header Content */}
+                    <div className="max-w-3xl mx-auto text-center mb-8">
+                        <h3 className="text-xl sm:text-2xl lg:text-3xl font-heading font-semibold text-premium-black mb-3 leading-tight">
+                            Excellence <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-yellow-500">Delivered.</span>
+                        </h3>
+                        <p className="text-sm sm:text-base text-muted font-light leading-relaxed mb-4">
+                            Our data-driven approach consistently produces top-percentile scores, opening doors to global institutions.
+                        </p>
+                        <button className="btn-primary py-2 sm:py-2.5 px-4 sm:px-6 text-xs sm:text-sm">
+                            Join Our Alumni
+                            <i data-lucide="arrow-right"></i>
+                        </button>
                     </div>
 
                     {/* Infinite Moving Testimonial Cards */}

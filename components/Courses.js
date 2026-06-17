@@ -153,7 +153,7 @@ function Courses() {
       desc: 'For university admissions. Master academic writing with Band 8+ strategies.',
       target: 'Study Abroad',
       icon: 'icon-book-open',
-      features: ['8+ Strategies', 'Daily Essays'],
+      features: ['8+ Strategies', 'Academic Skills'],
       details: {
         duration: '8-12 weeks',
         sessions: '60 hours',
@@ -172,7 +172,7 @@ function Courses() {
       desc: 'For global migration. Focus on real-world context and fluency drills.',
       target: 'Immigration',
       icon: 'icon-globe',
-      features: ['Letter Writing', 'Fluency Drills'],
+      features: ['Practical Communication', 'Mock Evaluation'],
       details: {
         duration: '6-10 weeks',
         sessions: '50 hours',
@@ -191,7 +191,7 @@ function Courses() {
       desc: 'Intensive computer‑based coaching, mastering AI scoring and templates.',
       target: 'Study / Migrate',
       icon: 'icon-monitor',
-      features: ['AI Scoring', 'Template Mastery'],
+      features: ['AI-Powered Feedback', 'Template Practice'],
       details: {
         duration: '4-8 weeks',
         sessions: '40 hours',
@@ -210,7 +210,7 @@ function Courses() {
       desc: 'Strategies tailored for North American admissions and integrated tasks.',
       target: 'US / Canada',
       icon: 'icon-award',
-      features: ['Integrated Writing', 'Campus Context'],
+      features: ['Integrated Tasks', 'University Context'],
       details: {
         duration: '8-12 weeks',
         sessions: '55 hours',
@@ -254,14 +254,14 @@ function Courses() {
         {/* Heading Section */}
         <div className="max-w-7xl mx-auto relative z-10 w-full mb-8 sm:mb-10 md:mb-12">
           <div className="text-center max-w-3xl mx-auto px-4">
-            <div className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-primary/10 text-primary mb-4 sm:mb-6">
-              <i data-lucide="book-open" className="text-sm"></i>
-              <span className="text-xs sm:text-sm font-semibold tracking-wide">Premium Curriculums</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary mb-4">
+              <i data-lucide="book-open" className="text-xs"></i>
+              <span className="text-[10px] sm:text-xs font-semibold tracking-wide uppercase">Premium Curriculums</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-white mb-4 sm:mb-6 leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-semibold text-white mb-4 leading-tight">
               Choose Your Pathway
             </h2>
-            <p className="text-base sm:text-lg text-white/60 font-light leading-relaxed">
+            <p className="text-sm sm:text-base text-white/60 font-light leading-relaxed max-w-2xl mx-auto">
               Select your targeted program and let our experts guide you to your desired score with mathematical precision and personalized coaching.
             </p>
           </div>
