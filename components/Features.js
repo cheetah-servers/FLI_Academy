@@ -91,7 +91,7 @@ function Features() {
                         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-center lg:divide-x lg:divide-premium-black/10">
                             <div className="flex flex-col items-center justify-center p-2">
                                 <span className="text-xl sm:text-2xl md:text-3xl font-semibold font-heading mb-1 text-premium-black">
-                                    <CountUp end="15,000+" />
+                                    <CountUp end="6,000+" />
                                 </span>
                                 <span className="text-[10px] sm:text-xs font-medium text-premium-black/80">Test Takers Trained</span>
                             </div>
