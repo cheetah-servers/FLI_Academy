@@ -109,28 +109,19 @@ function Results() {
 
     const testimonials = [
         {
-            name: 'Sarah Jenkins',
-            score: '8.5',
-            test: 'IELTS Academic',
-            dest: 'Oxford University, UK',
-            img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-            quote: "The personalized coaching completely revolutionized my preparation. The rigorous mock test environment gave me the exact edge I needed to hit Band 8.5 effortlessly."
+            name: 'Anjith Reddy',
+            score: '8.0',
+            quote: "Studying at the FLI academy for IELTS was an incredibly positive experience. The instructors were both knowledgeable and dedicated to ensuring a thorough understanding of the exam format. Thanks to their comprehensive study materials."
         },
-        { 
-            name: 'Raj Patel', 
-            score: '8.0', 
-            test: 'IELTS General', 
-            dest: 'Express Entry, Canada', 
-            img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
-            quote: "Exceptional mentors who know the exam inside out. They transformed my writing skills completely in just 4 weeks. Highly recommended for busy professionals."
+        {
+            name: 'Bhuvanesh Pathela',
+            score: '7.0',
+            quote: "After completing my B.Tech in 2022, I faced difficulties securing a job due to my lack of English communication skills, which led to a period of depression. With encouragement from a well-wisher and support from my parents, I found inspiration to pursue a Master's abroad. Enrolling in coaching at THEFLI, I experienced a transformation. Despite the months of hardship, I emerged feeling confident and assured of success. This was validated when I achieved a band score of 7. I am immensely grateful to the tutors and staff at THEFLI for their invaluable support. My heartfelt thanks go out to them, and I now look forward to reaching my goals without hesitation."
         },
-        { 
-            name: 'Elena Rossi', 
-            score: '9.0', 
-            test: 'IELTS Academic', 
-            dest: 'Monash University, AUS', 
-            img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
-            quote: "The adaptive scheduling and specialized template mastery were absolutely perfect for my professional life. Achieved my target score with confidence."
+        {
+            name: 'Aishwarya Kamble',
+            score: '8.0',
+            quote: "The perfect place to hone your skills if you're looking for an institute to prepare for IELTS. Really good infrastructure with proper cleanliness maintained at all times. The Tutor makes learning so interesting and joyful that makes you feel like the classes should never end!! If you're planning to join here, do it without giving it a second thought. It's totally worth it."
         }
     ];
 

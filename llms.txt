@@ -1,0 +1,31 @@
+# THE FLI IELTS Training
+
+THE FLI IELTS Training is a premium, high-converting test preparation landing page designed for IELTS, PTE, TOEFL, and Duolingo. It is a division of The Polyglot Academy.
+
+## Technology Stack
+- **Frontend Framework**: React 18 (loaded via CDN)
+- **Compilation**: Babel Standalone (loaded via CDN to compile JSX in-browser)
+- **Styling**: Tailwind CSS (loaded via CDN play script)
+- **Icons**: Lucide Icons
+- **Animations**: Framer Motion (loaded via CDN)
+
+## Directory Structure
+- `/index.html`: Main page structure, Tailwind CSS configuration, stylesheet layer styling, and library loaders.
+- `/favicon.svg`: Custom SVG favicon featuring a graduation cap in a yellow circle.
+- `/app.js`: Root React application component containing main page sections.
+- `/components/`:
+  - `Navbar.js`: Responsive navigation bar with mobile-friendly menu toggle and logo size optimizations.
+  - `Hero.js`: Hero section containing branding details, core value proposition, CTA buttons, and a hero image (optimized with fetchpriority).
+  - `Features.js`: Section detailing certified mentors, daily assessments, speaking labs, deep analytics, adaptive scheduling, and hybrid learning. Includes a responsive statistics ribbon (6-Week Score Improvement Plan).
+  - `Courses.js`: Interactive selection of targeted programs (IELTS Academic/General, PTE, TOEFL) with hover effects and detailed info modals.
+  - `Results.js`: Infinite scrolling testimonials carousel (featuring Anjith Reddy, Bhuvanesh Pathela, and Aishwarya Kamble).
+  - `CTA.js`: Call to action banner encouraging students to book free consultations.
+  - `Contact.js`: Response callback request form and local address/map integration.
+  - `Footer.js`: Footer links, social buttons, copyright disclaimer, and location map.
+- `/assets/`: Image resources for feature cards and hero section.
+
+## Best Practices
+- **LCP Optimization**: Preloads hero-image.png and sets `fetchpriority="high"` on the main image element.
+- **Image Performance**: Feature card images are lazy-loaded to minimize page size and improve speed.
+- **SEO & Semantics**: Uses standard header, main, and footer elements with proper metadata.
+- **Responsiveness**: All sections adapt to mobile screens, with specific layout adjustments for the stats ribbon and navigation drawer.

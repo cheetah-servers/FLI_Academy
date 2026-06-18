@@ -1,7 +1,7 @@
 function Hero() {
     try {
         return (
-            <section id="home" className="relative bg-premium-black pt-20 pb-12 lg:pt-28 lg:pb-20 overflow-hidden min-h-[80vh] flex items-center" data-name="Hero" data-file="components/Hero.js">
+            <section id="home" className="relative bg-premium-black pt-20 pb-20 sm:pb-24 lg:pt-28 lg:pb-20 overflow-hidden min-h-[80vh] flex items-center" data-name="Hero" data-file="components/Hero.js">
                 {/* ── Subtle Backgrounds ── */}
                 <div className="absolute inset-0 opacity-20" style={{
                     backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)',
@@ -15,7 +15,7 @@ function Hero() {
                     <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
                         {/* ── Left Content (Text) ── */}
-                        <div className="lg:col-span-6 xl:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
+                        <div className="lg:col-span-6 xl:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left order-1 lg:order-1">
                             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 mb-4 sm:mb-6 backdrop-blur-sm">
                                 <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
                                 <span className="text-[9px] sm:text-[11px] font-medium text-white/90">A Division of The Polyglot Academy</span>
@@ -44,7 +44,7 @@ function Hero() {
                         </div>
 
                         {/* ── Right Content (Image) ── */}
-                        <div className="lg:col-span-6 xl:col-span-5 relative order-1 lg:order-2 flex justify-center w-full mb-8 lg:mb-0">
+                        <div className="lg:col-span-6 xl:col-span-5 relative order-2 lg:order-2 flex justify-center w-full mb-8 lg:mb-0">
                             <div className="relative w-full max-w-[220px] sm:max-w-[300px] lg:max-w-[380px]">
                                 {/* Subtle glow behind image just to lift it */}
                                 <div className="absolute inset-0 bg-primary/20 rounded-full blur-[60px] transform scale-90"></div>
@@ -52,6 +52,7 @@ function Hero() {
                                 <img
                                     src="assets/hero-image.png"
                                     alt="FLI Student"
+                                    fetchpriority="high"
                                     className="relative z-10 w-full h-auto object-contain drop-shadow-2xl"
                                     style={{
                                         mixBlendMode: 'lighten',
