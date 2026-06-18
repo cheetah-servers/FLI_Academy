@@ -32,7 +32,7 @@ function Contact() {
                                     </div>
                                     <div>
                                         <h4 className="font-semibold mb-0.5 text-xs sm:text-sm">Phone</h4>
-                                        <p className="text-white/60 text-[11px] sm:text-xs">+91 8143444110,<br/>+91 9490937410</p>
+                                        <p className="text-white/60 text-[11px] sm:text-xs">+91 9177777604,<br/>+91 9490937410</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-3 sm:gap-4 group">

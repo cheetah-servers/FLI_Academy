@@ -58,7 +58,7 @@ function Footer() {
                             <ul className="space-y-2 text-xs text-white/60">
                                 <li className="flex items-start gap-2">
                                     <i data-lucide="phone" className="w-3.5 h-3.5 mt-0.5 text-primary shrink-0"></i>
-                                    <span>+91 8143444110<br/>+91 9490937410</span>
+                                    <span>+91 9177777604<br/>+91 9490937410</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <i data-lucide="mail" className="w-3.5 h-3.5 mt-0.5 text-primary shrink-0"></i>
