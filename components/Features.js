@@ -86,9 +86,9 @@ function Features() {
         return (
             <section id="about" className="pt-20 pb-8 sm:pt-24 sm:pb-10 md:pt-28 md:pb-14 lg:pt-32 lg:pb-16 px-4 sm:px-6 md:px-12 lg:px-24 bg-light relative min-h-[50vh] flex items-center" data-name="Features" data-file="components/Features.js">
                 {/* ── Stats Ribbon ── */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-6xl px-6 z-20" data-name="StatsRibbon">
-                    <div className="bg-primary text-premium-black rounded-2xl md:rounded-3xl shadow-xl shadow-primary/20 border border-primary/30 p-5 md:p-6 lg:p-8">
-                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center lg:divide-x lg:divide-premium-black/10">
+                <div className="relative lg:absolute lg:top-0 lg:left-1/2 w-full max-w-6xl px-4 sm:px-6 z-20 mb-10 lg:mb-0 -mt-16 sm:-mt-20 lg:mt-0 transform-none lg:-translate-x-1/2 lg:-translate-y-1/2" data-name="StatsRibbon">
+                    <div className="bg-primary text-premium-black rounded-2xl md:rounded-3xl shadow-xl shadow-primary/20 border border-primary/30 p-4 sm:p-6 lg:p-8">
+                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-center lg:divide-x lg:divide-premium-black/10">
                             <div className="flex flex-col items-center justify-center p-2">
                                 <span className="text-xl sm:text-2xl md:text-3xl font-semibold font-heading mb-1 text-premium-black">
                                     <CountUp end="15,000+" />
@@ -111,7 +111,7 @@ function Features() {
                                 <span className="text-xl sm:text-2xl md:text-3xl font-semibold font-heading mb-1 text-premium-black">
                                     <CountUp end="6-Week" />
                                 </span>
-                                <span className="text-[10px] sm:text-xs font-medium text-premium-black/80">Score Implementation Plan</span>
+                                <span className="text-[10px] sm:text-xs font-medium text-premium-black/80">Score Improvement Plan</span>
                             </div>
                         </div>
                     </div>
@@ -148,6 +148,7 @@ function Features() {
                                         <img
                                             src={feature.image}
                                             alt={feature.title}
+                                            loading="lazy"
                                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                         />
                                         {!feature.noOverlay && <div className="absolute inset-0 bg-gradient-to-t from-premium-black/50 to-transparent"></div>}
