@@ -84,7 +84,7 @@ function Features() {
 
     try {
         return (
-            <section id="about" className="pt-20 pb-8 sm:pt-24 sm:pb-10 md:pt-28 md:pb-14 lg:pt-32 lg:pb-16 px-4 sm:px-6 md:px-12 lg:px-24 bg-light relative min-h-[50vh] flex items-center" data-name="Features" data-file="components/Features.js">
+            <section id="about" className="pt-20 pb-8 sm:pt-24 sm:pb-10 md:pt-28 md:pb-14 lg:pt-32 lg:pb-16 px-4 sm:px-6 md:px-12 lg:px-24 bg-light relative min-h-[50vh] flex flex-col items-center" data-name="Features" data-file="components/Features.js">
                 {/* ── Stats Ribbon ── */}
                 <div className="relative lg:absolute lg:top-0 lg:left-1/2 w-full max-w-6xl px-4 sm:px-6 z-20 mb-10 lg:mb-0 -mt-16 sm:-mt-20 lg:mt-0 transform-none lg:-translate-x-1/2 lg:-translate-y-1/2" data-name="StatsRibbon">
                     <div className="bg-primary text-premium-black rounded-2xl md:rounded-3xl shadow-xl shadow-primary/20 border border-primary/30 p-4 sm:p-6 lg:p-8">
